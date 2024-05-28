@@ -31,5 +31,42 @@ class Program
 
         Console.WriteLine($"Quicksort ran for: {stopwatch.ElapsedMilliseconds} milliseconds");
 
+        SearchAlgorithms searchAlgorithms = new SearchAlgorithms();
+
+        stopwatch.Start();
+
+        int[] sampleArray2 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        int x = 3;
+        int result = searchAlgorithms.LinearSearch(sampleArray2, x);
+        if(result == -1) 
+        {
+            Console.WriteLine("Element not found!");
+        }
+        else 
+        {
+            Console.WriteLine($"The element was found within the given array on index: {result}");
+        }
+
+        stopwatch.Stop();
+        Console.WriteLine($"Linear search found the element in {stopwatch.ElapsedMilliseconds} milliseconds!");
+    
+        stopwatch.Start();
+
+        int[] sampleArray3 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        int x1 = 10;    
+        int result1 = searchAlgorithms.BinarySearch(sampleArray3, x1);
+
+        if(result1 == -1) 
+        {
+            Console.WriteLine("The element was not found within the sample array!");
+        }
+        else 
+        {
+            Console.WriteLine($"The element was found on index: {result1}");
+        }
+
+        stopwatch.Stop();
+
+        Console.WriteLine($"Binary Search Algorithm ran in: {stopwatch.ElapsedMilliseconds} milliseconds!");
     }
 }
