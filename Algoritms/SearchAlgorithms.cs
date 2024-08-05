@@ -48,7 +48,7 @@ public int BinarySearch(int[] arr, int x)
 
     while(left <= right) 
     {
-        int middle = left + (right - 1) / 2;
+        int middle = left + (right - left) / 2;
         if(arr[middle] == x) 
         {
             return middle;
